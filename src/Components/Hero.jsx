@@ -25,7 +25,7 @@ import blue from "../assets/blue.jpeg";
 import brown from "../assets/brown.jpeg";
 import secondl from "../assets/secondl.webp";
 import last from "../assets/last.webp";
-import last2 from "../assets/last2.jpeg";
+import last2 from "../assets/last2.jpeg"; 
 
 const Hero = () => {
   const products = [
