@@ -25,7 +25,7 @@ import blue from "../assets/blue.jpeg";
 import brown from "../assets/brown.jpeg";
 import secondl from "../assets/secondl.webp";
 import last from "../assets/last.webp";
-import last2 from "../assets/last2.jpeg"; 
+import last2 from "../assets/last2.jpeg";
 
 const Hero = () => {
   const products = [
@@ -34,17 +34,17 @@ const Hero = () => {
     { id: 3, name: "Classic Denim Jacket", price: "₹2,500", image: red13 },
     { id: 4, name: "Casual Sneakers", price: "₹999", image: white1 },
     { id: 5, name: "Leather Handbag", price: "₹3,150", image: white2 },
-    { id: 6, name: "Leather Handbag", price: "₹3,150", image: white12 },
-    { id: 7, name: "Leather Handbag", price: "₹3,150", image: yellow },
-    { id: 8, name: "Leather Handbag", price: "₹3,150", image: purple },
-    { id: 9, name: "Leather Handbag", price: "₹3,150", image: multi },
-    { id: 10, name: "Leather Handbag", price: "₹3,150", image: purple2 },
-    { id: 11, name: "Leather Handbag", price: "₹3,150", image: olive },
-    { id: 12, name: "Leather Handbag", price: "₹3,150", image: blue },
-    { id: 13, name: "Leather Handbag", price: "₹3,150", image: brown },
-    { id: 14, name: "Leather Handbag", price: "₹3,150", image: secondl },
-    { id: 15, name: "Leather Handbag", price: "₹3,150", image: last },
-    { id: 16, name: "Leather Handbag", price: "₹3,150", image: last2 },
+    { id: 6, name: "Stylish Tote Bag", price: "₹2,899", image: white12 },
+    { id: 7, name: "Bright Yellow Kurta", price: "₹1,099", image: yellow },
+    { id: 8, name: "Purple Anarkali", price: "₹1,499", image: purple },
+    { id: 9, name: "Multi-color Dupatta", price: "₹899", image: multi },
+    { id: 10, name: "Purple Saree", price: "₹1,799", image: purple2 },
+    { id: 11, name: "Olive Green Dress", price: "₹1,599", image: olive },
+    { id: 12, name: "Denim Blue Skirt", price: "₹1,299", image: blue },
+    { id: 13, name: "Brown Footwear", price: "₹1,199", image: brown },
+    { id: 14, name: "Black Clutch", price: "₹1,499", image: secondl },
+    { id: 15, name: "Golden Earrings", price: "₹799", image: last },
+    { id: 16, name: "Red Lehenga", price: "₹3,599", image: last2 },
   ];
 
   const categories = [
@@ -70,93 +70,94 @@ const Hero = () => {
   const sizes = ["S", "M", "L", "XL", "XXL"];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-12">
-      {/* Category Links */}
-      <div className="flex flex-wrap justify-center gap-4 mt-4 mb-8">
+    <div className="px-4 sm:px-6 lg:px-12 py-6">
+      {/* Category Buttons */}
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
         {categories.map((category) => (
           <span
             key={category.id}
-            className="rounded px-4 py-2 bg-gray-200 text-gray-800 font-semibold hover:bg-gray-300 transition duration-200 cursor-pointer"
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-4 py-2 rounded-full transition duration-200 cursor-pointer"
           >
             {category.name}
           </span>
         ))}
       </div>
 
-      {/* Circular Category Icons */}
-      <div className="flex flex-wrap justify-center gap-6 mb-12">
+      {/* Circle Category Grid */}
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-11 gap-4 justify-items-center mb-8">
         {circleItems.map((item, index) => (
-          <div key={index} className="flex flex-col items-center w-20 sm:w-24">
+          <div key={index} className="flex flex-col items-center">
             <img
               src={item.image}
               alt={item.name}
-              className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover shadow-md hover:scale-105 transition duration-300"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover shadow-md hover:scale-105 transition-transform duration-300"
             />
-            <span className="mt-2 text-xs sm:text-sm font-medium text-center">
+            <span className="mt-1 text-xs sm:text-sm text-center font-medium">
               {item.name}
             </span>
           </div>
         ))}
       </div>
 
-      {/* Featured Products */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-800">
+      {/* Heading */}
+      <h2 className="text-xl sm:text-3xl font-bold text-center text-gray-800 mb-8">
         Featured Products
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10">
+      {/* Product Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white shadow-xl rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="bg-white rounded-xl shadow hover:shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-56 sm:h-64 object-cover"
+              className="w-full h-32 sm:h-48 object-cover"
             />
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-base sm:text-lg font-semibold text-gray-800">
-                  {product.name}
-                </span>
-                <button className="text-gray-400 hover:text-red-500 transition duration-200 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
+            <div className="p-3 sm:p-4">
+              <h3 className="text-sm sm:text-lg font-semibold text-gray-800 truncate">
+                {product.name}
+              </h3>
+              <p className="text-sm font-bold text-gray-900 mt-1">
+                {product.price}
+              </p>
 
-              {/* Sizes */}
-              <div className="flex flex-wrap gap-2 mt-2">
-                {sizes.map((size, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 text-xs border border-gray-300 rounded hover:bg-purple-100 cursor-pointer"
-                  >
-                    {size}
-                  </span>
-                ))}
-              </div>
+              {/* Sizes & Actions - Only on md+ */}
+              <div className="hidden sm:block mt-4">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {sizes.map((size, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs border border-gray-300 rounded-full hover:bg-purple-100 cursor-pointer"
+                    >
+                      {size}
+                    </span>
+                  ))}
+                </div>
 
-              <div className="flex justify-between items-center mt-4">
-                <span className="text-xl font-bold text-gray-900">
-                  {product.price}
-                </span>
-                <button className="bg-purple-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-300">
-                  View Card
-                </button>
+                <div className="flex justify-between items-center">
+                  <button className="bg-purple-600 text-white text-sm px-4 py-2 rounded-full hover:bg-purple-700 transition">
+                    View Card
+                  </button>
+                  <button className="text-gray-400 hover:text-red-500 transition">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
